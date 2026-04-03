@@ -21,6 +21,7 @@
             background-position: center;
             min-height: 100vh;
             padding: 20px;
+            color: white;
         }
         
         .container {
@@ -30,30 +31,74 @@
         
         .logo {
             text-align: center;
-            margin: 30px 0 40px;
+            margin: 20px 0 30px;
         }
         
         .logo img {
-            max-width: 300px;
+            max-width: 250px;
             height: auto;
             border-radius: 16px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
         
-        .welcome-text {
+        .intro {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 25px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .intro h2 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .intro p {
+            font-size: 15px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+        
+        .features {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 12px;
-            padding: 30px;
-            color: white;
-            margin-bottom: 30px;
-            text-align: center;
+            padding: 20px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
         
-        .welcome-text h2 {
-            font-size: 28px;
-            font-weight: bold;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        .feature-item {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-item .icon {
+            margin-right: 12px;
+            font-size: 18px;
+        }
+        
+        .menu-section {
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            opacity: 0.9;
+            padding-left: 5px;
         }
         
         .menu-button {
@@ -62,11 +107,10 @@
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 16px;
-            padding: 20px 28px;
-            margin: 12px 0;
+            padding: 18px 24px;
+            margin: 8px 0;
             color: white;
-            font-size: 22px;
-            font-weight: 500;
+            font-size: 17px;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
@@ -76,50 +120,111 @@
         
         .menu-button:hover {
             background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-2px);
-        }
-        
-        .menu-button:active {
-            transform: translateY(0);
+            transform: translateX(5px);
         }
         
         .menu-button .checkmark {
-            margin-right: 16px;
-            font-size: 26px;
+            margin-right: 14px;
+            font-size: 22px;
+        }
+        
+        .menu-button .description {
+            font-size: 13px;
+            opacity: 0.8;
+            margin-left: auto;
+        }
+        
+        .start-here {
+            background: rgba(255, 215, 0, 0.3);
+            border: 2px solid rgba(255, 215, 0, 0.6);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .start-here h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #FFD700;
+        }
+        
+        .start-here p {
+            font-size: 14px;
+            opacity: 0.95;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Логотип (картинка) -->
+        <!-- Логотип -->
         <div class="logo">
             <img src="logo.png" alt="Digi-Flux">
         </div>
         
-        <!-- Текст (увеличенный) -->
-        <div class="welcome-text">
+        <!-- Приветствие -->
+        <div class="intro">
             <h2>Всё просто. Всё работает. Всё для вас!</h2>
+            <p>Быстрый и стабильный VPN без ограничений. Выберите раздел ниже для начала работы.</p>
         </div>
         
-        <!-- Кнопки (без эмодзи, с галочками) -->
-        <div class="menu-button" onclick="showPage('profile')">
-            <span class="checkmark">✅</span>
-            <span>Профиль</span>
+        <!-- С чего начать -->
+        <div class="start-here">
+            <h3>🎯 С чего начать?</h3>
+            <p>Нажмите "Профиль" для просмотра вашего доступа или "Подписка" для подключения</p>
         </div>
         
-        <div class="menu-button" onclick="showPage('subscription')">
-            <span class="checkmark">✅</span>
-            <span>Подписка</span>
+        <!-- Преимущества -->
+        <div class="features">
+            <div class="feature-item">
+                <span class="icon">⚡</span>
+                <span>Высокая скорость подключения</span>
+            </div>
+            <div class="feature-item">
+                <span class="icon">📱</span>
+                <span>Поддержка всех устройств</span>
+            </div>
+            <div class="feature-item">
+                <span class="icon">♾️</span>
+                <span>Безлимитный трафик</span>
+            </div>
+            <div class="feature-item">
+                <span class="icon">🎁</span>
+                <span>Пробный период</span>
+            </div>
+            <div class="feature-item">
+                <span class="icon">👥</span>
+                <span>Реферальная система</span>
+            </div>
         </div>
         
-        <div class="menu-button" onclick="showPage('invite')">
-            <span class="checkmark">✅</span>
-            <span>Пригласить</span>
-        </div>
-        
-        <div class="menu-button" onclick="showPage('help')">
-            <span class="checkmark">✅</span>
-            <span>Помощь</span>
+        <!-- Меню -->
+        <div class="menu-section">
+            <div class="section-title">📋 Основные разделы</div>
+            
+            <div class="menu-button" onclick="showPage('profile')">
+                <span class="checkmark">✅</span>
+                <span>Профиль</span>
+                <span class="description">Ваш доступ</span>
+            </div>
+            
+            <div class="menu-button" onclick="showPage('subscription')">
+                <span class="checkmark">✅</span>
+                <span>Подписка</span>
+                <span class="description">Подключить</span>
+            </div>
+            
+            <div class="menu-button" onclick="showPage('invite')">
+                <span class="checkmark">✅</span>
+                <span>Пригласить</span>
+                <span class="description">Бонусы</span>
+            </div>
+            
+            <div class="menu-button" onclick="showPage('help')">
+                <span class="checkmark">✅</span>
+                <span>Помощь</span>
+                <span class="description">Инструкции</span>
+            </div>
         </div>
     </div>
     
@@ -129,8 +234,8 @@
         
         function showPage(page) {
             tg.showPopup({
-                title: 'Раздел',
-                message: 'Здесь будет: ' + page,
+                title: 'Раздел: ' + page,
+                message: 'Здесь будет информация о разделе. Подключите к боту для полной функциональности.',
                 buttons: [{type: 'ok'}]
             });
         }
